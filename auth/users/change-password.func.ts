@@ -31,7 +31,7 @@ const http = new Http({
 
 export default new Func({
   plugins: [sql, http],
-  async handler() {
+  async handler () {
     const row = await sql.queryFirst('SELECT password FROM users WHERE id = ? LIMIT 1', [http.session.read('user_id')]);
     if (row.password !== http.params.old_password) {
       throw Error('旧密码错误');

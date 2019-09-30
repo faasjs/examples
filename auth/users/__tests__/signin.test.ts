@@ -37,7 +37,7 @@ describe('signin', function () {
     });
 
     expect(res.statusCode).toEqual(500);
-    expect(res.body).toEqual('{"error":{"message":"用户名错误"}}')
+    expect(res.body).toEqual('{"error":{"message":"用户名错误"}}');
   });
 
   test('wrong password', async function () {
@@ -52,6 +52,6 @@ describe('signin', function () {
     });
 
     expect(res.statusCode).toEqual(500);
-    expect(res.body).toEqual('{"error":{"message":"用户名或密码错误"}}')
+    expect(res.body).toEqual('{"error":{"message":"用户名或密码错误"}}');
   });
 });

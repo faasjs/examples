@@ -23,7 +23,7 @@ const http = new Http({
 
 export default new Func({
   plugins: [sql, http],
-  async handler() {
+  async handler () {
     await sql.query('INSERT INTO users (username,password) VALUES (?, ?)', [http.params.username, http.params.password]);
 
     const row = await sql.queryFirst('SELECT id FROM users WHERE username = ? LIMIT 1', [http.params.username]);

@@ -23,7 +23,7 @@ const http = new Http({
 
 export default new Func({
   plugins: [sql, http],
-  async handler() {
+  async handler () {
     const row = await sql.queryFirst('SELECT id,password FROM users WHERE username = ? LIMIT 1', [http.params.username]);
     if (!row) {
       throw Error('用户名错误');

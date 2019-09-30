@@ -14,7 +14,7 @@ describe('change-password', function () {
     const res = await func.handler({
       headers: {
         'content-type': 'application/json',
-        'cookie': `key=${func.http.session.encode({ user_id: 1 })}`
+        cookie: `key=${func.http.session.encode({ user_id: 1 })}`
       },
       body: JSON.stringify({
         old_password: 'world',
@@ -33,7 +33,7 @@ describe('change-password', function () {
     const res = await func.handler({
       headers: {
         'content-type': 'application/json',
-        'cookie': `key=${func.http.session.encode({ user_id: 1 })}`
+        cookie: `key=${func.http.session.encode({ user_id: 1 })}`
       },
       body: JSON.stringify({
         old_password: 'hello',

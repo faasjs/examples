@@ -7,7 +7,7 @@ const http = new Http();
 
 export default new Func({
   plugins: [sql, http],
-  handler() {
+  handler () {
     http.session.write('user_id', null);
   }
 });

@@ -13,7 +13,7 @@ describe('signout', function () {
   test('should work', async function () {
     const res = await func.handler({
       headers: {
-        'cookie': `key=${func.http.session.encode({ user_id: 1 })}`
+        cookie: `key=${func.http.session.encode({ user_id: 1 })}`
       }
     });
 

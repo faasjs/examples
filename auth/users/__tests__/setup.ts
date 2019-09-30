@@ -8,8 +8,8 @@ export default async function (name: string): Promise<FuncWarpper> {
   func.sql = func.plugins[0] as Sql;
   func.http = func.plugins[1] as Http;
 
-  await func.sql.query('CREATE TABLE IF NOT EXISTS "users" ("id" integer,"username" varchar UNIQUE,"password" varchar, PRIMARY KEY (id));')
+  await func.sql.query('CREATE TABLE IF NOT EXISTS "users" ("id" integer,"username" varchar UNIQUE,"password" varchar, PRIMARY KEY (id));');
   await func.sql.query('DELETE FROM users');
 
-  return func
+  return func;
 }

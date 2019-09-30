@@ -42,6 +42,6 @@ describe('signup', function () {
     });
 
     expect(res.statusCode).toEqual(500);
-    expect(res.body).toEqual('{"error":{"message":"SQLITE_CONSTRAINT: UNIQUE constraint failed: users.username"}}')
+    expect(res.body).toEqual('{"error":{"message":"SQLITE_CONSTRAINT: UNIQUE constraint failed: users.username"}}');
   });
 });
