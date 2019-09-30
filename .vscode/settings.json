@@ -37,6 +37,10 @@
     {
       "directory": "./todolist",
       "changeProcessCWD": true
+    },
+    {
+      "directory": "./auth",
+      "changeProcessCWD": true
     }
   ]
 }
