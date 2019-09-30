@@ -1,17 +1,1 @@
-{
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "declaration": false,
-    "outDir": "./src",
-    "strict": true
-  },
-  "include": [
-    "**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/__tests__/",
-    "tmp"
-  ]
-}
+{}

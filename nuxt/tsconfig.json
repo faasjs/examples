@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
     "moduleResolution": "node",
     "lib": [
       "esnext",
@@ -28,10 +26,5 @@
       "@nuxt/types",
       "@types/jest"
     ]
-  },
-  "exclude": [
-    "node_modules",
-    "**/__tests__/",
-    "**/tmp"
-  ]
+  }
 }
