@@ -9,14 +9,9 @@ describe('signup', function () {
   });
 
   test('should work', async function () {
-    const res = await func.handler({
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: 'hello',
-        password: 'world'
-      })
+    const res = await func.JSONhandler({
+      username: 'hello',
+      password: 'world'
     });
 
     expect(res.statusCode).toEqual(201);
@@ -31,14 +26,9 @@ describe('signup', function () {
   test('dup username', async function () {
     await func.sql.query('INSERT INTO users (username,password) VALUES (\'hello\',\'world\')');
 
-    const res = await func.handler({
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: 'hello',
-        password: 'world'
-      })
+    const res = await func.JSONhandler({
+      username: 'hello',
+      password: 'world'
     });
 
     expect(res.statusCode).toEqual(500);

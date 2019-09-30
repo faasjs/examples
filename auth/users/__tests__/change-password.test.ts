@@ -11,15 +11,11 @@ describe('change-password', function () {
   });
 
   test('should work', async function () {
-    const res = await func.handler({
-      headers: {
-        'content-type': 'application/json',
-        cookie: `key=${func.http.session.encode({ user_id: 1 })}`
-      },
-      body: JSON.stringify({
-        old_password: 'world',
-        new_password: 'hello'
-      })
+    const res = await func.JSONhandler({
+      old_password: 'world',
+      new_password: 'hello'
+    }, {
+      cookie: `key=${func.http.session.encode({ user_id: 1 })}`
     });
 
     expect(res.statusCode).toEqual(201);
@@ -30,15 +26,11 @@ describe('change-password', function () {
   });
 
   test('wrong password', async function () {
-    const res = await func.handler({
-      headers: {
-        'content-type': 'application/json',
-        cookie: `key=${func.http.session.encode({ user_id: 1 })}`
-      },
-      body: JSON.stringify({
-        old_password: 'hello',
-        new_password: 'hello'
-      })
+    const res = await func.JSONhandler({
+      old_password: 'hello',
+      new_password: 'hello'
+    }, {
+      cookie: `key=${func.http.session.encode({ user_id: 1 })}`
     });
 
     expect(res.statusCode).toEqual(500);

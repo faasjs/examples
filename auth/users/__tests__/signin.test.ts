@@ -11,14 +11,9 @@ describe('signin', function () {
   });
 
   test('should work', async function () {
-    const res = await func.handler({
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: 'hello',
-        password: 'world'
-      })
+    const res = await func.JSONhandler({
+      username: 'hello',
+      password: 'world'
     });
 
     expect(func.http.session.decode(res.headers['Set-Cookie'][0].match(/key=([^;]+)/)[1])).toEqual({ user_id: 1 });
@@ -26,14 +21,9 @@ describe('signin', function () {
   });
 
   test('wrong username', async function () {
-    const res = await func.handler({
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: '',
-        password: ''
-      })
+    const res = await func.JSONhandler({
+      username: '',
+      password: ''
     });
 
     expect(res.statusCode).toEqual(500);
@@ -41,14 +31,9 @@ describe('signin', function () {
   });
 
   test('wrong password', async function () {
-    const res = await func.handler({
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: 'hello',
-        password: ''
-      })
+    const res = await func.JSONhandler({
+      username: 'hello',
+      password: ''
     });
 
     expect(res.statusCode).toEqual(500);
