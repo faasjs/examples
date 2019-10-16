@@ -8,6 +8,10 @@
 
 使用 FaasJS 实现用户注册、登录、登出及修改密码功能
 
+## knex
+
+与 Knex 集成示例
+
 ## nuxt
 
 最简版 FaasJS + Nuxt 项目

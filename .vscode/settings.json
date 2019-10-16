@@ -41,6 +41,10 @@
     {
       "directory": "./auth",
       "changeProcessCWD": true
+    },
+    {
+      "directory": "./knex",
+      "changeProcessCWD": true
     }
   ]
 }
